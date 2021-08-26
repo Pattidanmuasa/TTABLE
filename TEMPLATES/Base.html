@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+	<style>		
+
+		.Timy {
+			background-color: brown;
+		}
+		body{
+			background-attachment: fixed;
+		}
+	</style>
+
+<body style="border: 4px solid orangered; border-radius:5px;">
+
+    <button><a style="text-decoration: none;" href="{% url 'TTB:Home' %}"><h4>Home</h4></a></button>
+
+    {% if Lessons %}
+    
+	<center><h1>TIME TABLE</h1></center>
+	<table style="border-radius:5px;" border="15" cellspacing="0" align="center">
+		<!--<caption>Timetable</caption>-->
+		<tr class="Timy">
+			<td align="center" height="40"
+				width="100"><br>
+				<b>Day/Time</b></br>
+			</td>
+			<td align="center" height="40"
+				width="100">
+				<b><br>8:15-8:55</b>
+			</td>
+			<td align="center" height="40"
+				width="100">
+				<b><br>8:55-9:35</b>
+			</td>
+			<td align="center" height="40"
+				width="100">
+				<b><br>9:35-10:05</b>
+			</td>
+			<td align="center" height="40"
+				width="100">
+				<b><br>10:05-10:45 </b>
+			</td>
+			<td align="center" height="40"
+				width="100">
+				<b><br>10:45-11:25</b>
+			</td>
+			<td align="center" height="40"
+				width="100">
+				<b><br>11:25-11:35</b>
+			</td>
+			<td align="center" height="40"
+				width="100">
+				<b><br>11:35-12:25</b>
+			</td>
+			<td align="center" height="40"
+				width="100">
+				<b><br>12:25-1.05</b>
+			<td align="center" height="40"
+				width="100">
+				<b><br>1:05-1:35</b>
+			<td align="center" height="40"
+				width="100">
+				<b><br>1:35-2:00</b>
+			</td>
+			<td align="center" height="40"
+				width="100">
+				<b><br>2:00-2:40</b>
+			</td>
+			<td align="center" height="40"
+				width="100">
+				<b><br>2:4-3:20</b>
+			</td>
+			<td align="center" height="40"
+				width="100">
+				<b><br>3:20-4:00</b>
+			</td>
+			<td align="center" height="40"
+				width="100">
+				<b><br>4:00-5:00</b>
+			</td>
+		</tr>
+        
+        {% if teacher %}
+        {% for teacher in teacher %}
+        <h2 style="text-align: left;">Class Teacher: {{teacher.Class_Teacher}}</h2>
+        {% endfor %}
+        {% endif %}
+        
+        {% for lesson in Lessons %}
+
+		<tr>
+			<div >
+				<td style="background-color:orangered;" align="center" height="40">
+				<b >{{lesson.DayOfWeek}}</b>
+			</td></div>
+			<td align="center" height="40">{{lesson.Lesson1}}</td>
+			<td align="center" height="40">{{lesson.Lesson2}}</td>
+
+			<td style="background-color:cyan" align="center" height="40">
+				<h2>{{lesson.Break_1}}<br></h2>
+			</td>
+			<td align="center" height="40">{{lesson.Lesson3}}</td>
+			<td align="center" height="40">{{lesson.Lesson4}}</td>
+
+			<td style="background-color:cyan" align="center" height="40">
+				<h2>{{lesson.Break_2}}<br></h2>
+			</td>
+			<td align="center" height="40">{{lesson.Lesson5}}</td>
+			<td align="center" height="40">{{lesson.Lesson6}}</td>
+			<td style="background-color:cyan" align="center" height="40">
+				<h2>{{lesson.Lunch_B}}<br></h2>
+			</td>
+			<td style="background-color:cyan" align="center" height="40">
+				<h2>L.Skils<br></h2>
+			</td>
+
+			<td align="center" height="40">{{lesson.Lesson7}}</td>
+		    <td align="center" height="40">{{lesson.Lesson8}}</td>
+			<td align="center" height="40">{{lesson.Lesson9}}</td>
+			<td style="background-color:orangered;" align="center" height="40">
+				<h2>{{lesson.Games}}<br></h2>
+			</td>
+		</tr>
+        
+        {% endfor %}
+	
+	</table>
+
+   
+
+    {% else %}
+    
+    <h1 style="color: blue;">We are sorry. It's not Yet available!</h1>
+
+    {% endif %}
+
+</body>
+
+</html>
+
+{% block content %}
+{% endblock %}
+
+
+
+
