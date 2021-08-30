@@ -7,6 +7,7 @@
 		}
 		body{
 			background-attachment: fixed;
+            background-color: rgb(173, 221, 173);
 		}
 	</style>
 
@@ -17,7 +18,7 @@
     {% if Lessons %}
     
 	<center><h1>TIME TABLE</h1></center>
-	<table style="border-radius:5px;" border="15" cellspacing="0" align="center">
+	<table style="border-radius:4px;" border="15" cellspacing="0" align="center">
 		<!--<caption>Timetable</caption>-->
 		<tr class="Timy">
 			<td align="center" height="40"
@@ -96,21 +97,21 @@
 			<td align="center" height="40">{{lesson.Lesson1}}</td>
 			<td align="center" height="40">{{lesson.Lesson2}}</td>
 
-			<td style="background-color:cyan" align="center" height="40">
+			<td style="background-color: cyan;" align="center" height="40">
 				<h2>{{lesson.Break_1}}<br></h2>
 			</td>
 			<td align="center" height="40">{{lesson.Lesson3}}</td>
 			<td align="center" height="40">{{lesson.Lesson4}}</td>
 
-			<td style="background-color:cyan" align="center" height="40">
+			<td style="background-color: cyan;" align="center" height="40">
 				<h2>{{lesson.Break_2}}<br></h2>
 			</td>
 			<td align="center" height="40">{{lesson.Lesson5}}</td>
 			<td align="center" height="40">{{lesson.Lesson6}}</td>
-			<td style="background-color:cyan" align="center" height="40">
+			<td style="background-color: cyan;" align="center" height="40">
 				<h2>{{lesson.Lunch_B}}<br></h2>
 			</td>
-			<td style="background-color:cyan" align="center" height="40">
+			<td style="background-color: cyan;" align="center" height="40">
 				<h2>L.Skils<br></h2>
 			</td>
 
@@ -130,7 +131,7 @@
 
     {% else %}
     
-    <h1 style="color: blue;">We are sorry. It's not Yet available!</h1>
+    <center><h1 style="color: blue;">We are sorry. It's not Yet available!</h1></center>
 
     {% endif %}
 
