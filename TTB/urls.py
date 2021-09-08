@@ -5,6 +5,7 @@ from . import views
 app_name='TTB'
 
 urlpatterns = [
+    path('', Homm, name='Homm'),
     path('', Home, name='Home'),
     path('Form1A', Form1A, name='Form1A'),
     path('Form1B', Form1B, name='Form1B'),

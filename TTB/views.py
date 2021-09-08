@@ -6,6 +6,9 @@ from .models import *
 def Home(request):
     return render(request, 'Home.html')
 
+def Homm(request):
+    return render(request, 'Homm.html')
+
 
 
 def Form1A(request):
